@@ -1,0 +1,23 @@
+<div class="nav_bar">
+    <div class="nav_item">
+      <div class="cancel-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <ul>
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'task:score' %}" {% if '/score' in request.path %}class="active"{% endif %}>Score History</a>
+        </li>
+        <li>
+          <a href="{% url 'task:daily' %}" {% if '/daily' in request.path %}class="active"{% endif %}>Daily Tasks</a>
+        </li>
+        <li>
+          <a href="{% url 'task:list' %}" {% if '/task/list' in request.path %}class="active"{% endif %}>Short-long term Tasks</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="menu-btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </div>
